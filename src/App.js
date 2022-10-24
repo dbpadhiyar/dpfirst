@@ -4,12 +4,12 @@ import About from './components/About';
 import Alert from './components/Alert';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-}
-  from "react-router-dom"
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route
+// }
+//   from "react-router-dom"
 
 function App() {
   const [mode, setMode] = useState('light');
@@ -48,14 +48,17 @@ function App() {
   }
   return (
     <>
-      <Router>
+      {/* <Router>
         <Navbar title="dpFIrst" aboutText="About DP" mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
         <Routes>
           <Route exact path="/about" element={<About />} />
           <Route exact path="/" element={<TextForm heading="Text Utils is Awesome." mode={mode} />} />
         </Routes>
-      </Router>
+      </Router> */}
+      <Navbar title="dpFIrst" aboutText="About DP" mode={mode} toggleMode={toggleMode} />
+      <Alert alert={alert} />
+      <TextForm heading="Text Utils is Awesome." mode={mode} />
     </>
   );
 }
