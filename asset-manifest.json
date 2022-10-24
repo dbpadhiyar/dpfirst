@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/dpfirst/static/css/main.60c733f8.css",
+    "main.js": "/dpfirst/static/js/main.9139c420.js",
+    "static/js/787.eb387b25.chunk.js": "/dpfirst/static/js/787.eb387b25.chunk.js",
+    "index.html": "/dpfirst/index.html",
+    "main.60c733f8.css.map": "/dpfirst/static/css/main.60c733f8.css.map",
+    "main.9139c420.js.map": "/dpfirst/static/js/main.9139c420.js.map",
+    "787.eb387b25.chunk.js.map": "/dpfirst/static/js/787.eb387b25.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.60c733f8.css",
+    "static/js/main.9139c420.js"
+  ]
+}
