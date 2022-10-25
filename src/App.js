@@ -12,6 +12,7 @@ import {
   from "react-router-dom"
 
 function App() {
+  const [brand, setBrand] = useState('');
   const [mode, setMode] = useState('light');
 
   const [alert, setalert] = useState(null);
@@ -32,6 +33,7 @@ function App() {
       document.body.style.backgroundColor = '#042743';
       showAlert("Dark Mode is Enabled", "success");
       document.title = 'DP-Text-Dark Mode';
+      setBrand('DPFIRST');
       // setInterval(() => {
       //   document.title = 'DP-Text is Best';
       // }, 2000);
@@ -44,15 +46,16 @@ function App() {
       document.body.style.backgroundColor = 'white';
       showAlert("Light Mode is Enabled", "success");
       document.title = 'DP-Text-Light Mode';
+      setBrand('Text-Utils');
     }
   }
   return (
     <>
       <Router>
-        <Navbar title="dpFIrst" aboutText="About DP" mode={mode} toggleMode={toggleMode} />
+        <Navbar title="DPFIRST" aboutText="About DP" mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
         <Routes>
-          <Route exact path="/about" element={<About />} />
+          <Route exact path="/about" element={<About mode={mode} header={brand} />} />
           <Route exact path="/" element={<TextForm heading="Text Utils is Awesome." mode={mode} />} />
         </Routes>
       </Router>
