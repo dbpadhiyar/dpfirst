@@ -14,9 +14,7 @@ export default function TextForm(props) {
         setText(event.target.value);
     }
     const copyText = () => {
-        let text = document.getElementById('ta_Text');
-        text.select();
-        navigator.clipboard.writeText(text.value);
+        navigator.clipboard.writeText(userInput);
         document.getSelection().removeAllRanges();
     }
     const removeSpace = () => {
@@ -49,8 +47,8 @@ export default function TextForm(props) {
             </div>
             <div className="container my-3" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
                 <h1>Your Word Summary</h1>
-                <p><b>{userInput.split(" ").filter((element) => { return element.length !== 0 }).length}</b> word in your summary and <b>{userInput.length}</b> Character in your summary</p>
-                <p>{userInput.length > 0 ? (0.008 * userInput.split(' ').filter((element) => { return element.length !== 0 }).length).toFixed(2) + 'Minutes Read' : 'Enter Text to get estimate read time'}</p>
+                <p><b>{userInput.split(/\s+/).filter((element) => { return element.length !== 0 }).length}</b> word in your summary and <b>{userInput.length}</b> Character in your summary</p>
+                <p>{userInput.length > 0 ? (0.008 * userInput.split(/\s+/).filter((element) => { return element.length !== 0 }).length).toFixed(2) + 'Minutes Read' : 'Enter Text to get estimate read time'}</p >
                 <h2>Priview</h2>
                 <p className='preview'>{userInput.length > 0 ? userInput : "Nothing to preview."}</p>
             </div>
